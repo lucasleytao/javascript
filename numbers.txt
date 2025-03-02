@@ -1,0 +1,22 @@
+// NUMBERS
+
+let number = 5
+
+console.log(number.toString())
+console.log(typeof number.toString())
+
+// BOOLEANS
+// false
+// true
+
+let n = '2'
+let nn = 2
+
+console.log( n == nn) //true
+console.log( n === nn) //false
+
+let vazio = null //vazio
+let indefinido //variavel nao definida
+
+console.log(vazio)
+console.log(indefinido)

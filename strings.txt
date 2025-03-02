@@ -1,0 +1,23 @@
+// STRINGS
+
+const message = 'string'
+
+console.log(message.length)
+
+let username = 'lucas'
+let lastname = 'LEITAO'
+
+// template strings
+console.log(`meu nome é ${username} ${lastname}`)
+
+// concatenar
+console.log('meu nome é ' + username +' '+lastname)
+
+//FONTE
+console.log(`meu nome é ${username.toUpperCase()} ${lastname.toLowerCase()}`)
+
+
+//METODOS DE ARRAYS
+let users = 'lucas,bia,joao'
+
+console.log(users.split(',')) //quebra a string pela virgula

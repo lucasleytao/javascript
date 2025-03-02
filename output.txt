@@ -1,0 +1,1 @@
+document.getElementById('root').innerHTML='text by <b>javascript</b>' //html interno

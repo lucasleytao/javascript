@@ -1,0 +1,19 @@
+// **block scope
+
+// if (1 + 1 == 2) {
+//     let message = 'olá, mundo'
+// }
+
+// alert(message)
+
+let a=1, b=2
+
+console.log(a, b)
+
+let message = 'ola mundo' 
+
+message = 'ola lucas' //const: uncaugth type error: tipo de erro nao detectado
+
+alert(message)
+
+console.log(message)
