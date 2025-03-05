@@ -33,7 +33,7 @@ let bool = true    //boolean (true or false)
 
 console.log(typeof bool)
 
-//FIXME: OPERADORES ARITMÉTICOS (MATEMÁTICA)
+//FIXME: OPERADORES ARITMÉTICOS (Math)
 
 let primeiro = 2
 let segundo = 2
@@ -54,9 +54,9 @@ console.log((2 + 3) * 10)
 console.log(Math.abs(-10))
 console.log(Math.sqrt(16))
 
-//FIXME: BOOLEANOS
+//FIXME: BOOLEANOS (True / False)
 
-// * OPERADORES RELACIONAIS > utilizados para comparar valores e verificar se a relacao e true or false
+// * OPERADORES RELACIONAIS > utilizados para comparar valores e verificar relacao (true or false)
 
 // comparacao == (===)
 // diferenciacao !== (!==)
@@ -101,7 +101,7 @@ console.log('10' - 1) //9 *o que nao acontece para as outras operacoes
 console.log('10' * 3) //30
 console.log(10 - 'asdf') //retorna NaN: Not a Number
 
-//FIXME: ESTRUTURAS CONDICIONAIS (CONTROLE DE FLUXO): IF...ELSE / SWITCH CASE
+//FIXME: ESTRUTURAS CONDICIONAIS *CONTROLADAS (CONTROLE DE FLUXO): IF...ELSE / SWITCH CASE
 
 //* Determinadas linhas serao executadas apenas se determinada condicao for satisfeita
 
@@ -177,18 +177,18 @@ console.clear()
 
         const input = require('readline-sync') // funcao require(requerindo) atributo com aspas simples
 
-        // let numeroAleatorio = 5
+        let numeroAleatorio = 5
 
-        // let numeroInput = Number(input.question('Tente adivinhar um numero inteiro entre 1 e 5: '))
+        let numeroInput = Number(input.question('Tente adivinhar um numero inteiro entre 1 e 5: '))
 
-        // while (numeroAleatorio !== numeroInput) { // enquanto condicao verdadeira (true)
-        //     console.log(numeroInput, typeof numeroInput,': Voce errou!')
-        //     numeroInput = Number(input.question('Escolha outro numero: '))
-        // }
+        while (numeroAleatorio !== numeroInput) { // enquanto condicao verdadeira (true)
+            console.log(numeroInput, typeof numeroInput,': Voce errou!')
+            numeroInput = Number(input.question('Escolha outro numero: '))
+        }
 
-        // console.log('Voce acertou!!!') // se condicao false: sai do laco(loop) e imprime essa declaracao
+        console.log('Voce acertou!!!') // se condicao false: sai do laco(loop) e imprime essa declaracao
 
-        // console.clear()
+        console.clear()
 
 // DO...WHILE (FAÇA/ENQUANTO) *Verificação no final
 
@@ -208,7 +208,7 @@ let i = 0
 do {
   i++
   result += i
-} while (i < 5)
+} while (i < 5) //verifica no final
 
 console.log(result) //12345
 
@@ -216,7 +216,7 @@ console.log(result) //12345
 
 // FOR (PARA)
 
-//TODO: ATENÇÃO! FORMA MAIS VERBOSA!!!
+//FORMA MAIS VERBOSA!!!
 
 // const inputNota = require('readline-sync')
 
@@ -264,24 +264,28 @@ console.log(`Media do aluno: ${soma / 3}`)
 
 console.clear()
 
-// ARRAYS (LISTAS)
 
-// Como criar um array
+//---------------------------- ESTRUTURA DE DADOS ---------------------
+
+
+//FIXME: ARRAYS (LISTAS)
+
+//TODO: Como criar um array
 
 let lista = ['Lucas', 36, 1.71, 83.5]
 
 console.log(lista)
 
-// Como acessar os elementos do array
+//TODO: Como acessar os elementos do array
 
 console.log('elemento 1: ', lista[0])
 console.log('elemento 3: ', lista[2])
 
-// Como obter o tamanho do array
+//TODO: Como obter o tamanho do array
 
 console.log('tamanho do array: ', lista.length) //4
 
-// Percorrendo um array
+//TODO: Percorrendo um array: for of (percorre os elementos do array) / for in (percorre os indices do array)
 
 for (let i = 0; i < 4; i++) { //metodo for
     console.log(lista[i])
@@ -294,3 +298,172 @@ for (let elemento of lista) { //metodo for of (percorre os elementos do array) *
 for (let indice in lista) { //metodo for in (percorre os indices do array)
     console.log(indice, lista[indice]) //traz o indice e o elemento desse indice
 }
+
+//FIXME: ARRAYS > MÉTODOS DE ARRAYS
+//* métodos são como funções dentro de uma variável
+
+// exemplos de funções: Number() String() console.log()
+
+//TODO: **Fatiamento: .slice
+
+let lista1 = [1, 2, 3, 4, 5]
+
+console.log(lista1.slice(0,3)) // busca os elementos do indice 0 até o indice 2
+console.log(lista1.slice(3)) // busca os elementos a partir do indice 3
+
+console.clear
+
+//TODO: **Adicionando elementos: .push (inclui no final do array) | .unshift (inclui no inicio do array)
+
+console.log('antes do push: ', lista1)
+
+lista1.push(10,20,'lucas')
+
+console.log('depois do push: ', lista1)
+
+lista1.unshift('zero', 0)
+
+console.log('elemento no inicio: ', lista1)
+
+//TODO: **Removendo elementos: .pop (remove por padrao o ultimo elemento do array) | .shift (remove por padrao o primeiro elemento)
+
+let lista2 = [0, 1, 2, 3, 'lucas']
+
+let removido = lista2.pop() // busca o ultimo elemento do array e joga na variavel removido
+
+console.log('lista atual: ', lista2)
+
+console.log('o elemento removido foi: ', removido)
+console.log('o ultimo elemento agora e: ', lista2.pop())
+
+// console.log('antes do shift: ', lista2)
+
+// lista2.shift()
+
+// console.log('depois do shift: ', lista2)
+
+//TODO: **Concatenando arrays: .concat
+
+let lista3 = [1, 2, 3]
+let lista4 = [10, 20, 30]
+
+console.log(lista3)
+console.log(lista4)
+
+console.log(lista3.concat(lista4))
+
+//TODO: **Buscando elementos: .indexOf (busca onde esta o primeiro indice do elemento) | .lastIndexOf (busca onde esta o ultimo indice do elemento)
+
+let lista5 = [10, 20, 30, 40, 50]
+
+console.log('quero buscar o indice do elemento 40 da lista', lista5)
+
+let elemento40 = lista5.indexOf(40)
+//*se o elemento nao existir retorna -1
+//*se houver mais de um elemento de mesmo valor ele retorna o primeiro que encontra
+
+console.log('indice do elemento 40: ', elemento40)
+
+let lista6 = [1, 2, 2, 3, 2, 4, 5]
+
+console.log('buscar ultimo indice do elemento 2: ', lista6)
+console.log('ultimo indice do elemento 2: ', lista6.lastIndexOf(2))
+
+//TODO: **Verificando a existência de um elemento dentro do array: .includes
+
+let lista7 = [1, 3, 5, 10, 17, 25]
+
+console.log(lista7)
+console.log('existe(true) nao existe(false): ', lista7.includes(17))
+
+console.clear()
+
+//TODO: **Invertendo um array: .reverse
+
+console.log('normal: ', lista7)
+console.log('invertido: ', lista7.reverse())
+
+//FIXME: FUNÇÕES
+
+// Definicao de funcao
+
+function nomeFuncao(parametro) {
+    declaração
+}
+
+//**aqui eu declaro a funcao
+
+function saudacao(nome, curso) {
+    console.log(`Olá, ${nome}! Seja bem-vindo(a) ao seu curso de ${curso}!`) //apenas imprime valores
+}
+
+//**aqui eu chamo a funcao pelo nome
+
+saudacao('Lucas', 'Javascript')
+
+// RETORNO DA FUNCAO **aqui a ideia e tornar a funcao generica atribuindo de fato uma funcao a ela
+
+function soma(n1, n2) {
+    return n1 + n2 //detecta e encerra
+}
+
+let resultado = soma(10, 20)
+
+console.log(resultado)
+console.log(resultado / 2)
+
+console.clear()
+
+// FUNCAO ANONIMA (ARROW FUNCTION)
+
+const anonima = (number1, number2) => {
+    return number1 + number2
+}
+
+console.log(anonima(20, 30))
+
+//OU COM RETURN IMPLICITO
+
+// const anonima = (number1, number2) => number1 + number2
+
+// console.log(anonima(20,40))
+
+//RETURN
+
+// function maiorQue50(numero) {
+//     if(numero > 50)
+//         return true
+// }
+
+// return false
+
+//FIXME: OBJETOS
+
+// Como criar um objeto
+
+const pessoa = {
+    nome: 'Lucas',
+    idade: 36
+}
+
+console.log(pessoa)
+console.log(pessoa.nome)
+console.log(pessoa['nome']) //forma alternativa
+
+// Como percorrer um objeto
+
+for(let chave in pessoa) {
+    console.log(chave)
+}
+
+// Como adicionar/substituir um par chave-valor no objeto
+
+pessoa.altura = 1.77
+
+console.log(pessoa)
+
+// Como remover um par chave-valor do objeto
+
+delete pessoa.altura
+
+console.log(pessoa)
