@@ -383,50 +383,79 @@ console.clear()
 console.log('normal: ', lista7)
 console.log('invertido: ', lista7.reverse())
 
-//FIXME: FUNÇÕES
+//FIXME: FUNÇÕES *Evita repeticao de codigo *bloco de codigo que se pode reaproveitar diversas vezes *melhor manutencao e qualidade do codigo 
 
-// Definicao de funcao
+// Definicao de funcao ** Aqui atribuimos um nome pela qual a funcao sera chamada
 
-function nomeFuncao(parametro) {
+function nomeFuncao(parametro1, parametro2, etc) {
     declaração
 }
 
-//**aqui eu declaro a funcao
+// COMO ENVIAR PARAMETROS PARA UMA FUNCAO
 
-function saudacao(nome, curso) {
-    console.log(`Olá, ${nome}! Seja bem-vindo(a) ao seu curso de ${curso}!`) //apenas imprime valores
+// aqui eu declaro (defino) uma funcao
+function saudacao(nome, tema='Variáveis') { //parametro default caso nao seja atribuido na chamada
+    console.log(`Que legal, ${nome}! Você está aprendendo sobre ${tema} em Javascript!`)
+}
+// aqui eu chamo a funcao pelo nome e atribuo valores aos parametros(variaveis) estabelecidos na definicao
+saudacao('Lucas')
+saudacao('Beatriz', 'Funções')
+saudacao('João','Arrow Function')
+
+// RETORNO DA FUNCAO (return) 
+
+// aqui eu apenas imprimo o resultado da operacao da soma das variaveis
+
+function soma(n1, n2) {
+    console.log('Soma=', n1 + n2)
 }
 
-//**aqui eu chamo a funcao pelo nome
+soma(10, 20)
 
-saudacao('Lucas', 'Javascript')
-
-// RETORNO DA FUNCAO **aqui a ideia e tornar a funcao generica atribuindo de fato uma funcao a ela
+// aqui a ideia e tornar a funcao generica atribuindo de fato uma funcao a ela
 
 function soma(n1, n2) {
     return n1 + n2 //detecta e encerra
+    console.log('Qualquer coisa') //isso nao imprime pois foi detectado e encerrado no return para imprimir tem que vir antes do return
 }
 
-let resultado = soma(10, 20)
+let resultado = soma(10, 20) //aqui eu guardo a funcao em uma variavel
 
-console.log(resultado)
-console.log(resultado / 2)
+console.log('Soma =', resultado) //aqui eu imprimo a variavel que guarda a operacao
+console.log('Média =', resultado / 2)
+
+// outro exemplo da utilizacao do return
+
+function maiorQue50(numero) {
+    if (numero > 50) {
+        return true
+    }
+
+    return false
+}
 
 console.clear()
 
 // FUNCAO ANONIMA (ARROW FUNCTION)
 
-const anonima = (number1, number2) => {
-    return number1 + number2
+// funcao normal
+function sum(n1, n2) {
+    return n1 + n2 //detecta e encerra
 }
 
-console.log(anonima(20, 30))
+// forma moderna de funcao
 
-//OU COM RETURN IMPLICITO
+const sumArrow = (n1, n2) => {
+    return n1 + n2
+}
 
-// const anonima = (number1, number2) => number1 + number2
+// mesma coisa que isso (return implicito)
 
-// console.log(anonima(20,40))
+const sumArrow2 = (n1, n2) => n1 + n2
+
+let sumValue = sumArrow2(10, 20) //aqui eu guardo a funcao em uma variavel
+
+console.log(sumValue)
 
 //RETURN
 
