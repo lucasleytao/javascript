@@ -1,16 +1,18 @@
-//TODO: Let's Code
-
 //FIXME: VARIÁVEIS
 
 // variavel [operador de atribuicao =] seta um valor qualquer
 
-/* let = let it change (permita que isso mude)
+/* let = let it change (permita que isso mude) permite reassinalar uma variavel
    const = não permite mudanca */
 
-username = 'lucas'
-idade = 36
+// const username = 'lucas'
+let age = 36
 
-console.log(username, idade)
+console.log(username, age)
+
+// TEMPLATE STRING (Forma moderna)
+
+console.log(`Olá! Me chamo ${username} e tenho ${age} anos.`)
 
 // **convencao para nomes compostos (camel case)
 
@@ -19,19 +21,36 @@ let meuCodigo = true
 // ESCOPO DE BLOCO (BLOCK SCAPE)
 
 if (2 == 2) {
-    var message = 'ola mundo' // let e const nao ira rodar fora do bloco **var permite
+    var message = 'ola mundo' // let e const nao ira rodar fora do bloco **var permite pois nao possui block scope
 }
 
 console.log(message)
 
+// MÉTODOS DE STRING
+
+const names = 'lucas, jerdeson, eduardo, maura'
+console.log(names.split(',')) // cria uma lista (array)
+
+//**pesquisar outros metodos de string
+
 //FIXME: TIPOS DE VARIÁVEIS ** TIPOS PRIMITIVOS
 
 let nome = 'lucas' //string (text)
-let age = 36       //number
-let float = 79.5   //number
+// let idade = 36     //number (int)
+let float = 79.5   //number (float)
 let bool = true    //boolean (true or false)
+let tipo = 'string'
 
-console.log(typeof bool)
+console.log(typeof bool) //exibe o tipo de dado 'boolean'
+console.log(typeof tipo) //string
+
+// NULL UNDEFINED
+
+const x = null // variavel const necessita obrigatoriamente ser inicializada
+let y // let nao precisa ser inicializada
+
+console.log(x) //null
+console.log(y) //undefined
 
 //FIXME: OPERADORES ARITMÉTICOS (Math)
 
@@ -74,7 +93,9 @@ console.log(Math.sqrt(16))
 let maior = true // atribuicao
 let cnh = true
 
-console.log(maior == true ? 'Entrada Permitida' : 'entrada Não Permitida') // * operador condicional ternario
+// * OPERADOR CONDICIONAL TERNÁRIO
+
+console.log(maior == true ? 'Entrada Permitida' : 'entrada Não Permitida')
 
 console.log(maior == true && cnh == false ? 'Condutor Habilitado!' : 'Condutor Não Habilitado!')
 
@@ -169,7 +190,7 @@ switch (atendimento) {
 
 console.clear()
 
-//FIXME: ESTRUTURAS CONDICIONAIS NÃO CONTROLADAS (LAÇOS DE REPETIÇÃO) 
+//FIXME: ESTRUTURAS CONDICIONAIS **NÃO CONTROLADAS (LAÇOS DE REPETIÇÃO) 
 
 // WHILE (ENQUANTO) *Verificação no início
 
@@ -212,7 +233,7 @@ do {
 
 console.log(result) //12345
 
-//FIXME: REPETICÃO CONTROLADA (LAÇO NUMÉRICO)
+//FIXME: REPETIÇÃO *CONTROLADA (LAÇO NUMÉRICO)
 
 // FOR (PARA)
 
@@ -313,15 +334,15 @@ console.log(lista1.slice(3)) // busca os elementos a partir do indice 3
 
 console.clear
 
-//TODO: **Adicionando elementos: .push (inclui no final do array) | .unshift (inclui no inicio do array)
+//TODO: **Adicionando elementos: .push | .unshift
 
 console.log('antes do push: ', lista1)
 
-lista1.push(10,20,'lucas')
+lista1.push(10,20,'lucas') // adiciona no final do array
 
 console.log('depois do push: ', lista1)
 
-lista1.unshift('zero', 0)
+lista1.unshift('zero', 0) // adiciona no inicio do array
 
 console.log('elemento no inicio: ', lista1)
 
@@ -341,6 +362,16 @@ console.log('o ultimo elemento agora e: ', lista2.pop())
 // lista2.shift()
 
 // console.log('depois do shift: ', lista2)
+
+//TODO: **Reassinalar elementos: Manipulação de elementos em uma lista
+
+lista2[4] = 'Leitao'
+
+//TODO: **Organizando elementos dentro de um array
+
+let sort = [1, 0, 5, 3, 4]
+
+console.log(sort.sort()) // [0, 1, 3, 4, 5]
 
 //TODO: **Concatenando arrays: .concat
 
@@ -383,6 +414,39 @@ console.clear()
 console.log('normal: ', lista7)
 console.log('invertido: ', lista7.reverse())
 
+//FIXME: MAP, FILTER & REDUCE
+
+// .map **faz uma varredura no array item por item e executa o que se pede
+
+const arrayMap = [1, 2, 3, 5]
+
+const map1 = arrayMap.map((x) => x * 2) // passa uma funcao para mapear | .map() e uma funcao que recebe uma funcao
+
+console.log(map1)
+
+// .filter **filtra elementos especificos
+
+const arrayFilter1 = ['lucas', 'leandro', 'beatriz', 'joao']
+
+const filter1 = arrayFilter1.filter((arrayFilter) => arrayFilter.charAt(0) == 'b') //beatriz  
+
+console.log(filter1)
+
+const number = [1, 10, 10, 23, 41]
+
+const num1 = number.filter((num) => num == 10)
+
+console.log(num1) // [10, 10]
+console.log(num1.length) // 2
+
+// .reduce 
+
+const soma = [1, 2, 3, 4, 5]
+
+const sum1 = soma.reduce((atual, accumulator) => atual + accumulator, 0) //accumulator inicial = 0, entao 0 (accumulator) + 1 (atual) = 1 (novo accumulator) ... 
+
+console.log(sum1)
+
 //FIXME: FUNÇÕES *Evita repeticao de codigo *bloco de codigo que se pode reaproveitar diversas vezes *melhor manutencao e qualidade do codigo 
 
 // Definicao de funcao ** Aqui atribuimos um nome pela qual a funcao sera chamada
@@ -391,7 +455,7 @@ function nomeFuncao(parametro1, parametro2, etc) {
     declaração
 }
 
-// COMO ENVIAR PARAMETROS PARA UMA FUNCAO
+// ENVIANDO PARAMETROS PARA UMA FUNCAO
 
 // aqui eu declaro (defino) uma funcao
 function saudacao(nome, tema='Variáveis') { //parametro default caso nao seja atribuido na chamada
@@ -457,22 +521,18 @@ let sumValue = sumArrow2(10, 20) //aqui eu guardo a funcao em uma variavel
 
 console.log(sumValue)
 
-//RETURN
-
-// function maiorQue50(numero) {
-//     if(numero > 50)
-//         return true
-// }
-
-// return false
-
-//FIXME: OBJETOS
+//FIXME: OBJETOS (guarda valores dentro de propriedades)
 
 // Como criar um objeto
 
+const objeto = {
+    propriedade: 'valor'
+}
+
 const pessoa = {
     nome: 'Lucas',
-    idade: 36
+    idade: 36,
+    hobbies: ['Assistir F1','Jogar video game', 'Tocar teclado']
 }
 
 console.log(pessoa)
@@ -496,3 +556,70 @@ console.log(pessoa)
 delete pessoa.altura
 
 console.log(pessoa)
+
+// Praticando...
+
+const pessoa = {
+    username: 'Lucas',
+    age: 36,
+    hobbies: ['Assistir F1','Jogar video-game', 'Tocar teclado'],
+    dog: {
+        name: 'Zidane',
+        age: 1,
+        race: 'Pastor alemão'
+    }
+}
+
+// const name = pessoa.name
+// const age = pessoa.age
+// const hobbies = pessoa.hobbies
+// const read = pessoa.hobbies[0]
+
+
+// DESESTRUTURACAO (Destructuring)
+
+// **desestruturacao do objeto pessoa
+
+const { age: idade, hobbies, username, dog: {name} } = pessoa
+
+console.log(username)
+console.log(idade)
+console.log(hobbies)
+
+// **adicionando uma propriedade
+
+// pessoa.dog = 'Zidane'
+
+console.log(pessoa.dog.age)
+
+// **desestruturacao da propriedade dog
+
+// dog: {name} // valor extraido de dog
+console.log(name)
+
+// MAS O QUE MAIS VAMOS VER NO DIA-A-DIA É UMA LISTA CONTENDO VÁRIOS OBJETOS (TODO LIST)
+
+const todo = [
+    {
+        id: 1,
+        username: 'lucas',
+        email: 'email@email.com',
+        admin: true
+    },
+    {
+        id: 2,
+        username: 'renato',
+        email: 'email@email.com',
+        admin: false
+    },
+    {
+        id: 3,
+        username: 'flavia',
+        email: 'email@email.com',
+        admin: false
+    }
+]
+
+const read = todo[2]
+
+console.log(read)
