@@ -40,6 +40,10 @@ header {
   border-radius: 10px;
 }
 
+.item {
+  border-radius: 5px;
+}
+
 #my-form label {
   display: block;
 }
