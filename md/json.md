@@ -1,4 +1,4 @@
-
+### Analogia
 
 Imagina que você está escrevendo uma carta para um amigo, mas em vez de usar palavras, você organiza as informações de uma forma bem clara, com *rótulos* e *valores*. Isso é o que o **JSON** faz: ele organiza dados para que computadores entendam e conversem entre si sem se confundir. Vou te mostrar como funciona!
 
