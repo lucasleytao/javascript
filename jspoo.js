@@ -45,22 +45,39 @@ Atributos(variaveis): Que irao descrever o objeto.
 Metodos(modulos): Definem o comportamento do objeto.
 */
 
-class Car { // fabrica
+class Factory { // fabrica
     constructor(param1, param2, param3) { // maquina que vai construir nosso objeto por meio de atributos(variaveis que descrevem o objeto)
         this.marca = param1 // marca recebe o parametro param1 (assinala a propriedade param1)
         this.modelo = param2
         this.ano = param3
     }
-    // metodos(modulos) que definem o comportamento do objeto
+    // metodo(modulo) que define um comportamento do objeto
     buzina() {
-        return console.log(this.modelo + ' buzinou: Biii')
+        return this.modelo + ' buzinou: Biiiiiii'
+    }
+
+    //metodo estatico (nao esta diretamente ligado as propriedades do objeto)
+    static status() {
+        console.log('Modelos mais vendidos')
     }
 }
 
 // instanciando(caracteristicas) o objeto
 
-const uno = new Car('Fiat', 'Uno', 2001)
-const toro = new Car('Fiat', 'Toro', 2018)
+const uno = new Factory('Fiat', 'Uno', 2001)
+const toro = new Factory('Fiat', 'Toro', 2018)
 
 console.log(uno.buzina())
-console.log(toro.ano)
+Factory.status()
+
+// HERANÇA (Consegue herdar determinada classe em uma nova classe)
+
+class Cell extends Factory {
+    constructor(param1, param2, param3) {
+        super(param1, param2, param3)
+    }
+}
+
+const apple = new Cell('Apple', 'iPhone16', 2025)
+
+console.log(apple)

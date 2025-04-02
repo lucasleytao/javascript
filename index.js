@@ -1,35 +1,18 @@
-class Factory {
-    constructor(marca, modelo, ano) {
-        this.marca = marca
-        this.modelo = modelo
-        this.ano = ano
-    }
-    //metodo(modulo)
-    buzina() {
-        return this.modelo + ' buzinou: Biiiiiii'
-    }
+//FIXME: MANIPULANDO ELEMENTOS DO DOM
 
-    //metodo estatico (nao esta diretamente ligado as propriedades dos objetos)
-    static status() {
-        console.log('Modelos mais vendidos')
-    }
-}
+// 1.primeiro seleciona o elemento
+const items = document.querySelector('.items') //busca todos os itens da classe .items
+const button = document.querySelector('.btn')
 
-const uno = new Factory('Fiat', 'Uno', 2001)
-const toro = new Factory('Fiat', 'Toro', 2018)
+// 2.agora podemos manipular o elemento
 
-console.log(uno.buzina())
-Factory.status()
+// items.remove() //remove todos os itens da classe .items
+// items.firstElementChild.remove() //remove o primeiro elemento da classe .items
+// items.lastElementChild.remove() //remove o ultimo elemento da classe .items
 
-// HERANÇA (Consegue herdar determinada classe em uma nova classe)
+// items.children[0].textContent='item um' //usa o metodo de index para acessar os itens de .items
 
-class Cell extends Factory {
-    constructor(marca, modelo, ano) {
-        super(marca, modelo, ano)
-    }
-}
+// items.children[1].innerHTML='<h1>item dois</h1>' 
 
-const apple = new Cell('Apple', 'iPhone16', 2025)
-
-console.log(apple)
-
+button.style.background='tomato'
+button.style.color='blue'

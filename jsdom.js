@@ -201,3 +201,54 @@ caixa.classList.toggle("visivel"); // Alterna entre adicionar/remover "visivel"
 // ## **Conclusão**
 // A manipulação do DOM em JavaScript é essencial para criar interações dinâmicas em páginas web. Cada método tem seu uso específico, 
 // e escolher o correto pode impactar diretamente a performance e a organização do código.
+
+// ---
+
+//TODO: Praticando ...
+
+//FIXME: SELECIONANDO ELEMENTOS DO DOM
+
+//**SELECIONAR APENAS UM ELEMENTO
+
+// //MOSTRA A REFERENCIA >> <h1 id="add-user">texto...</h1>
+
+// const addUserText = document.getElementById('add-user') // aqui nao e necessario especificar id
+
+// addUserText.textContent = 'mudei aqui'
+// addUserText.innerText = 'mudei aqui da mesma forma'
+
+//MOSTRA O ELEMENTO EM SI >> h1#add-user
+
+// const addUserText = document.querySelector('#add-user') // aqui devo especificar classe ou id
+
+// console.log(addUserText)
+
+//PEGAR my-form DENTRO DE container
+
+// const myForm = document.querySelector('.container #my-form')
+
+// console.log(myForm)
+
+// const myForm = document.querySelector('.item') //retorna o primeiro elemento
+
+// console.log(myForm)
+
+//**SELECIONAR MÚLTIPLOS ELEMENTOS
+
+// const allItems = document.querySelectorAll('.item') //busca todos os elementos .item
+
+// console.log(allItems)
+
+// const allItems = document.querySelectorAll('.items .item') //busca todos os elementos .item da classe .items
+
+// console.log(allItems)
+
+// const allItems = document.getElementsByClassName('item') //busca pelo nome da classe (collections)
+
+// console.log(allItems)
+
+// const allItems = document.getElementsByTagName('li') //busca pelo nome da tag
+
+// console.log(allItems)
+
+
